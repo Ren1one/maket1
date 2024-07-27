@@ -1,0 +1,15 @@
+<svg width="18.000000" height="18.000000" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<clipPath id="clip1_196">
+			<rect id="formkit:date" width="18.000000" height="18.000000" fill="white" fill-opacity="0"/>
+		</clipPath>
+	</defs>
+	<rect id="formkit:date" width="18.000000" height="18.000000" fill="#FFFFFF" fill-opacity="0"/>
+	<g clip-path="url(#clip1_196)">
+		<path id="Vector" d="M16.31 18L1.68 18C0.75 18 0 17.24 0 16.31L0 2.81C0 1.87 0.75 1.12 1.68 1.12L16.31 1.12C17.24 1.12 18 1.87 18 2.81L18 16.31C18 17.24 17.24 18 16.31 18ZM1.68 2.25C1.37 2.25 1.12 2.49 1.12 2.81L1.12 16.31C1.12 16.62 1.37 16.87 1.68 16.87L16.31 16.87C16.62 16.87 16.87 16.62 16.87 16.31L16.87 2.81C16.87 2.49 16.62 2.25 16.31 2.25L1.68 2.25Z" fill="#FDFDFD" fill-opacity="1.000000" fill-rule="nonzero"/>
+		<path id="Vector" d="M5.06 4.5C4.74 4.5 4.5 4.25 4.5 3.93L4.5 0.56C4.5 0.24 4.74 0 5.06 0C5.37 0 5.62 0.24 5.62 0.56L5.62 3.93C5.62 4.25 5.37 4.5 5.06 4.5ZM12.93 4.5C12.62 4.5 12.37 4.25 12.37 3.93L12.37 0.56C12.37 0.24 12.62 0 12.93 0C13.25 0 13.5 0.24 13.5 0.56L13.5 3.93C13.5 4.25 13.25 4.5 12.93 4.5ZM17.43 6.75L0.56 6.75C0.24 6.75 0 6.5 0 6.18C0 5.87 0.24 5.62 0.56 5.62L17.43 5.62C17.75 5.62 18 5.87 18 6.18C18 6.5 17.75 6.75 17.43 6.75Z" fill="#FDFDFD" fill-opacity="1.000000" fill-rule="nonzero"/>
+	</g>
+</svg>
