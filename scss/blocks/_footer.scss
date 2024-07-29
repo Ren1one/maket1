@@ -1,0 +1,241 @@
+.footer {
+    background: rgb(26, 62, 62);
+
+    &__top-container{
+        padding: 178px 16px 80px 16px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    &__items {
+        flex: 0 0 280px;
+
+        &:first-of-type{
+            flex: 0 1 480px;
+        }
+    }
+
+    &__title {
+        color: rgb(243, 245, 244);
+        font-family: Nunito Sans;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24px;
+        margin-bottom: 17px;
+    }
+
+    &__text {
+        color: rgb(255, 255, 255);
+        font-family: Nunito Sans;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-bottom: 80px;
+        max-width: 461px;
+    }
+
+    &__contacts {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    &__email {
+        color: rgb(255, 255, 255);
+        font-family: Nunito Sans;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        text-decoration-line: underline;
+        transition: all 0.3s;
+
+        @media (hover:hover){
+            &:hover{
+                color: rgb(242, 190, 34);
+            }
+        }
+        @media (hover:none){
+            &:active{
+                color: rgb(242, 190, 34);
+            }
+        }
+    }
+
+    &__phone {
+        color: rgb(255, 255, 255);
+        font-family: Nunito Sans;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        text-decoration-line: underline;
+        transition: all 0.3s;
+
+        @media (hover:hover){
+            &:hover{
+                color: rgb(242, 190, 34);
+            }
+        }
+        @media (hover:none){
+            &:active{
+                color: rgb(242, 190, 34);
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        gap: 20px;
+    }
+
+
+    &__social-link {
+        display: block;
+
+        & svg{
+            width: 26px;
+            height: 26px;
+            overflow: visible;
+            fill: #fff;
+            transition: fill 0.3s;
+        }
+
+        @media (hover:hover){
+            &:hover{
+                & svg{
+                    fill: rgb(242, 190, 34);
+                }
+            }
+        }
+        @media (hover:none){
+            &:active{
+                & svg{
+                    fill: rgb(242, 190, 34);
+                }
+            }
+        }
+    }
+
+    &__list-item:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    &__list-link {
+        position: relative;
+        padding-left: 18px;
+        display: block;
+        color: rgb(253, 253, 253);
+        font-family: Nunito Sans;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        transition: all 0.3s;
+
+        &::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 3px;
+            width: 6px;
+            height: 10px;
+            background-image: url(../img/list-arrow.svg);
+        }
+
+        &--new{
+            &::after{
+                content: "new";
+                margin-left: 8px;
+                border-radius: 4px;
+                padding: 2px 10px;
+                font-family: Nunito Sans;
+                font-weight: 700;
+                font-size: 12px;
+                line-height: 16px;
+                -webkit-text-decoration: underline 1px solid #fff;
+                text-decoration: underline 1px solid #fff;
+                color: #1a3e3e;
+                background: #fff;
+            }
+        }
+
+        @media (hover:hover){
+            &:hover{
+                color: rgb(242, 190, 34);
+                &::before{
+                    background-image: url(../img/list-arrow-hover.svg);
+                }
+            }
+        }
+        @media (hover:none){
+            &:active{
+                color: rgb(242, 190, 34);
+                &::before{
+                    background-image: url(../img/list-arrow-hover.svg);
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        background: rgb(24, 18, 30);
+    }
+
+    &__bottom-container{
+        padding: 24px 16px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info {
+        color: rgb(255, 255, 255);
+        font-family: Nunito Sans;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+    }
+
+    &__police {
+        color: rgb(255, 255, 255);
+        font-family: Nunito Sans;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 18px;
+        text-decoration-line: underline;
+        transition: all 0.3s;
+
+        @media (hover:hover){
+            &:hover{
+                color: rgb(242, 190, 34);
+            }
+        }
+        @media (hover:none){
+            &:active{
+                color: rgb(242, 190, 34);
+            }
+        }
+    }
+
+    @media (max-width: 910px) {
+        &__top-container{
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        &__text{
+            margin-bottom: 30px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        &__bottom-container{
+            padding: 20px 16px;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    @media (max-width: 550px) {
+        &__top-container{
+            padding: 50px 16px 80px 16px;
+        }
+    }
+}

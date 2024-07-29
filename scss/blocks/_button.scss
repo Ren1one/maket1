@@ -1,0 +1,36 @@
+.button{
+    display: block;
+    width: max-content;
+    padding: 12px 24px 12px 24px;
+    border-radius: 4px;
+    background-color: rgb(26, 62, 62);
+    cursor: pointer;
+    transition: background-color .3s;
+    transition: color .3s;
+
+    color: rgb(253, 253, 253);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 1.2%;
+    text-align: left;
+
+    &--big{
+        padding: 16px 36px 16px 36px;
+    }
+
+    @media (hover:hover){
+        &:hover{
+            outline: 1px solid rgb(26, 62, 62);
+            background-color: rgb(253, 253, 253);
+            color: rgb(26, 62, 62);
+        }
+    }
+    @media (hover:none){
+        &:active{
+            outline: 1px solid rgb(26, 62, 62);
+            background-color: rgb(253, 253, 253);
+            color: rgb(26, 62, 62);
+        }
+    }
+}

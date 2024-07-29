@@ -1,0 +1,38 @@
+.blog {
+    background: rgb(243, 245, 244);
+    
+    &__container {
+        overflow: hidden;
+        padding: 80px 0 100px;
+    }
+
+    &__top {
+        margin-bottom: 40px;
+        padding: 0 16px;
+    }
+
+    &__swiper {
+        margin-bottom: 50px;
+        overflow: visible;
+        padding: 0 16px 0 16px;
+    }
+
+    &__button {
+        display: block;
+        margin: 0 auto;
+    }
+    
+    @media (max-width: 768px){
+        &__container {
+            overflow: hidden;
+            padding: 50px 0;
+        }
+
+        &__top {
+            margin-bottom: 32px;
+        }
+        &__swiper {
+            margin-bottom: 32px;
+        }
+    }
+}

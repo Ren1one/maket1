@@ -1,0 +1,163 @@
+.form-search{
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px 43px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 24px;
+
+    &__custom-select-1{
+        flex: 1 1 27%;
+    }
+    &__custom-select-2{
+        flex: 1 1 27%;
+    }
+
+    &__date{
+        flex: 1 1 27%;
+    }
+
+    &__date-wrapper{
+        position: relative;
+
+        &::after{
+            content: url(../../img/calendar.svg);
+            position: absolute;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+    }
+
+    &__date-input{
+        width: 100%;
+        height: 52px;
+        background: transparent;
+        padding: 14px 44px 14px 16px;
+        border: 1px solid rgb(225, 227, 228);
+        border-radius: 8px;
+        color: rgb(253, 253, 253);
+        font-family: Nunito Sans;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 150%;
+        letter-spacing: 0px;
+    }
+
+    &__desc{
+        padding: 8px 8px 0px 8px;
+        color: rgb(253, 253, 253);
+        font-family: Nunito Sans;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 150%;
+        letter-spacing: 0px;
+    }
+
+    &__button{
+        flex: 1 0 213px;
+        padding: 16px 0;
+        border-radius: 4px;
+        background: rgb(253, 253, 253);
+        border: 1px solid rgb(253, 253, 253);
+        cursor: pointer;
+
+        color: rgb(26, 62, 62);
+        font-family: Nunito Sans;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 1.2%;
+        text-align: center;
+
+        &:hover{
+            background: rgb(26, 62, 62);
+            border: 1px solid rgb(253, 253, 253);
+            color: rgb(253, 253, 253);
+        }
+    }
+
+    &__close-modal{
+        display: none;
+        position: absolute;
+        top: 20px;
+        right: 8px;
+        width: 30px;
+        height: 30px;
+        background-color: transparent;
+        & span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 2px;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+
+        & span:first-child{
+            transform: translateX(-50%) rotate(45deg);
+        }
+        & span:last-child{
+            transform: translateX(-50%) rotate(-45deg);
+        }
+    }
+
+    @media (max-width:994px){
+        flex-wrap: wrap;
+
+        &__custom-select-1{
+            flex: 1 1 48%;
+        }
+
+        &__custom-select-2{
+            flex: 1 1 50%;
+        }
+    
+        &__date{
+            flex: 1 1 48%;
+        }
+    }
+    @media (max-width: 591px){
+        &__button{
+            flex: 1 1 100%;
+        }
+    }
+    @media (max-width: 420px){
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        align-content: center;
+        visibility: hidden;
+        opacity: 0;
+        overflow-y: auto;
+
+        transition: 0.5s;
+
+        border-radius: 0;
+        backdrop-filter: blur(50px);
+        background: rgb(24 51 63 / 72%);
+
+        &__custom-select{
+            flex-basis: 100%;
+        }
+        &__date{
+            flex-basis: 100%;
+        }
+
+        &__close-modal{
+            display: block;
+        }
+
+        &--open {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

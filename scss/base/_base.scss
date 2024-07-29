@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@font-face {
+	font-family: 'NEXT ART'; 
+	src: local('NEXT ART'),
+		url(/fonts/NEXT\ ART_Bold.otf); 
+}
+@font-face {
+	font-family: 'Inter'; 
+	src: local('Inter'),
+		url(/fonts/Inter-SemiBold.otf); 
+}
+
+body {
+    font-family: Nunito Sans;
+    font-weight: 700;
+}
+
+.lock{
+    overflow: hidden;
+}
+
+.container{
+	max-width: 1212px;
+	margin: 0 auto;
+}

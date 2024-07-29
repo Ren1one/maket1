@@ -1,0 +1,30 @@
+.popular {
+
+    &__container {
+        padding: 80px 0 100px 0;
+    }
+
+    &__top {
+        margin-bottom: 50px;
+        padding: 0 16px;
+    }
+
+    &__swiper {
+        margin-bottom: 50px;
+        overflow: hidden;
+        padding: 0 16px;
+    }
+
+    &__button{
+        margin: 0 auto;
+        display: block;
+        
+    }
+
+    @media (max-width:768px){
+        &__container {
+            padding: 50px 0 50px 0;
+        }
+    }
+}
+

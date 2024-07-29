@@ -10,6 +10,19 @@ burger.addEventListener('click', () => {
     body.classList.toggle('lock');
 });
 
+// убирает меню при переходе по якорю
+const linkItems = document.querySelectorAll('.header__nav-link');
+
+linkItems.forEach((link) =>{
+    link.addEventListener('click', () => {
+        if (headerNav.classList.contains("header__nav--active")){
+            headerBurger.classList.remove('header__burger-btn--active');
+            headerNav.classList.remove('header__nav--active');
+            body.classList.remove('lock');
+        }
+    });
+})
+
 // Кастомный select
 document.querySelectorAll(".custom-select").forEach((customSelectWrapper) => {
     const selectBtn = customSelectWrapper.querySelector(".custom-select__button");
@@ -127,13 +140,23 @@ const swiper3 = new Swiper('.gallery__swiper', {
 
 function applyStyles() {
     if (window.innerWidth <= 550) {
-        document.querySelector(".newsletter__content-title").innerHTML = "Делимся впечатлениями";
+        document.querySelector(".newsletter__content-subtitle").innerHTML = "Делимся впечатлениями";
         // document.querySelector(.)
     }
     else{
-        document.querySelector(".newsletter__content-title").innerHTML = "Получайте полезные рассылки о путешествиях";
+        document.querySelector(".newsletter__content-subtitle").innerHTML = "Получайте полезные рассылки о путешествиях";
     }
 }
 
 window.addEventListener('resize', applyStyles);
 applyStyles();
+
+
+new VenoBox({
+    selector: '.gallery__link',
+    numeration: true,
+    infinigall: true,
+    overlayColor: "rgb(26 62 62 / 86%)",
+    share: true,
+    spinner: 'rotating-plane'
+});
