@@ -422,7 +422,7 @@ body {
   position: relative;
 }
 .form-search__date-wrapper::after {
-  content: url(../../img/calendar.svg);
+  content: url(../img/calendar.svg);
   position: absolute;
   top: 50%;
   right: 16px;
@@ -678,7 +678,7 @@ body {
   transform: translate3d(-50%, -50%, 0);
   width: 50px;
   height: 50px;
-  background: url(../../img/about/about_btn.svg);
+  background: url(../img/about/about_btn.svg);
   transition: 300ms;
 }
 .about__video-btn:hover {
