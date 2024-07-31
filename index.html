@@ -54,7 +54,7 @@
                     Насладись прогулкой в&nbsp;горах
                     с&nbsp;командой единомышленников
                 </h1>
-                <form class="hero__form form-search">
+                <form action="#" class="hero__form form-search" id="form-hero">
                     <div class="form-search__custom-select form-search__custom-select-1 custom-select">
                         <button class="custom-select__button" type="button">Локация для тура</button>
                         <ul class="custom-select__list">
@@ -62,12 +62,12 @@
                             <li class="custom-select__list-item" data-value="test2">Локация 2</li>
                             <li class="custom-select__list-item" data-value="test3">Локация 3</li>
                         </ul>
-                        <input type="text" name="location" class="custom-select__input-hidden" value="none">
+                        <input type="text" name="location" class="custom-select__input-hidden"  id="location-input">
                         <p class="form-search__desc">выберите из списка</p>
                     </div>
                     <div class="form-search__date">
                         <div class="form-search__date-wrapper">
-                            <input class="form-search__date-input" type="text" id="date-range" value="Дата похода">
+                            <input class="form-search__date-input" type="text" id="date-range" name="date-range" placeholder="Дата похода">
                         </div>
                         <p class="form-search__desc">укажите диапазон</p>
                     </div>
@@ -79,8 +79,8 @@
                             <li class="custom-select__list-item" data-value="3">3</li>
                             <li class="custom-select__list-item" data-value="4">4</li>
                         </ul>
-                        <input type="text" name="location" class="custom-select__input-hidden" value="none">
-                        <p class="form-search__desc">минимум 4 человека</p>
+                        <input type="text" name="people" class="custom-select__input-hidden" id="people-input">
+                        <p class="form-search__desc">выберите из списка</p>
                     </div>
                     <button class="form-search__button" type="submit">Найти программу</button>
                     <button class="form-search__close-modal" type="button">
@@ -338,9 +338,9 @@
                     </div>
                     <div class="newsletter__subscribe">
                         <h2 class="newsletter__title">Введите e-mail адрес</h2>
-                        <form action="#" class="newsletter__form">
+                        <form action="#" class="newsletter__form" id="newsletter">
                             <label class="newsletter__label">
-                                <input type="email" class="newsletter__email" placeholder="name@domain.com">
+                                <input type="email" name="email" class="newsletter__email" placeholder="name@domain.com" id="email-input" required>
                             </label>
                             <button type="submit" class="newsletter__button button">Подписаться на новости</button>
                         </form>
@@ -449,6 +449,7 @@
         </div>
     </footer>
     <script src="js/air-datepicker.js"></script>
+    <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/venobox/2.1.8/venobox.min.js"></script>
     <script src="js/main.js"></script>

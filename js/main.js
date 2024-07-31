@@ -70,6 +70,39 @@ new AirDatepicker('#date-range', {
     multipleDatesSeparator: ' - '
 });
 
+
+// Валидация формы hero
+const validator = new JustValidate('#form-hero', {
+    errorLabelStyle: {
+        display: 'none', // Скрыть стандартные сообщения об ошибках
+    },
+    submitFormAutomatically: true,
+});
+
+validator
+.addField('#location-input', [
+    {
+    rule: 'required',
+    },
+])
+.addField('#people-input', [
+        {
+        rule: 'required',
+    },
+])
+.addField('#date-range', [
+    {
+    rule: 'required',
+    },
+    {
+        rule: 'customRegexp',
+        value: /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(\d{4}) - (0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.(\d{4})$/,
+    },
+])
+
+
+
+
 //Модальное окно
 const modalBtn = document.querySelector(".hero__modal-btn");
 const modalCloseBtn = document.querySelector(".form-search__close-modal");
@@ -85,8 +118,9 @@ modalCloseBtn.addEventListener("click", () => {
     body.classList.toggle('lock');
 })
 
-// Инициализация Swiper
 
+
+// Инициализация Swiper
 const swiper = new Swiper('.popular__swiper', {
     // Optional parameters
     direction: 'horizontal',
@@ -100,7 +134,6 @@ const swiper = new Swiper('.popular__swiper', {
 });
 
 const swiper2 = new Swiper('.blog__swiper', {
-    // Optional parameters
     direction: 'horizontal',
     spaceBetween: 20,
     slidesPerView: "auto",
@@ -138,10 +171,11 @@ const swiper3 = new Swiper('.gallery__swiper', {
     }
 });
 
+
+// Изменение текста по брейкпоинту
 function applyStyles() {
     if (window.innerWidth <= 550) {
         document.querySelector(".newsletter__content-subtitle").innerHTML = "Делимся впечатлениями";
-        // document.querySelector(.)
     }
     else{
         document.querySelector(".newsletter__content-subtitle").innerHTML = "Получайте полезные рассылки о путешествиях";
@@ -151,7 +185,7 @@ function applyStyles() {
 window.addEventListener('resize', applyStyles);
 applyStyles();
 
-
+// Инициализация галлереи
 new VenoBox({
     selector: '.gallery__link',
     numeration: true,

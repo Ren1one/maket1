@@ -78,5 +78,9 @@
 
     &__input-hidden{
         display: none;
+
+        &.just-validate-error-field + .form-search__desc{
+            color: #f36f6f;
+        }
     }
 }
