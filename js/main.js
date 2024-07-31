@@ -4,24 +4,39 @@ const headerBurger = document.querySelector(".header__burger-btn");
 const headerNav = document.querySelector(".header__nav");
 const body = document.getElementById('body');
 
-burger.addEventListener('click', () => {
+const toggleBurgerMenu = () => {
     headerBurger.classList.toggle('header__burger-btn--active');
     headerNav.classList.toggle('header__nav--active');
     body.classList.toggle('lock');
+};
+
+const closeMenu = () => {
+    if (headerNav.classList.contains("header__nav--active")){
+        headerBurger.classList.remove('header__burger-btn--active');
+        headerNav.classList.remove('header__nav--active');
+        body.classList.remove('lock');
+    }
+};
+
+burger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleBurgerMenu();
 });
 
 // убирает меню при переходе по якорю
-const linkItems = document.querySelectorAll('.header__nav-link');
+headerNav.addEventListener('click', (e) => {
+    if (e.target.classList.contains('header__nav-link')) {
+        e.stopPropagation();
+        closeMenu();
+    }
+});
 
-linkItems.forEach((link) =>{
-    link.addEventListener('click', () => {
-        if (headerNav.classList.contains("header__nav--active")){
-            headerBurger.classList.remove('header__burger-btn--active');
-            headerNav.classList.remove('header__nav--active');
-            body.classList.remove('lock');
-        }
-    });
-})
+// закрыть меню по клавише ESC
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeMenu();
+    }
+});
 
 // Кастомный select
 document.querySelectorAll(".custom-select").forEach((customSelectWrapper) => {
@@ -30,8 +45,15 @@ document.querySelectorAll(".custom-select").forEach((customSelectWrapper) => {
     const listItem = customSelectWrapper.querySelectorAll(".custom-select__list-item");
     const inputHidden = customSelectWrapper.querySelector(".custom-select__input-hidden");
 
+    // закрытие выпадающего списка
+    const closeDropdown = () => {
+        list.classList.remove("custom-select__list--visible");
+        selectBtn.classList.remove("custom-select__button--active");
+    };
+
     // Клик по кнопке. Открыть/закрыть select
-    selectBtn.addEventListener("click", () => {
+    selectBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
         list.classList.toggle("custom-select__list--visible")
         selectBtn.classList.toggle("custom-select__button--active")
     })
@@ -42,24 +64,21 @@ document.querySelectorAll(".custom-select").forEach((customSelectWrapper) => {
             e.stopPropagation();
             selectBtn.innerText = this.innerText;
             inputHidden.value = this.dataset.value;
-            list.classList.remove("custom-select__list--visible")
-            selectBtn.classList.remove("custom-select__button--active")
+            closeDropdown();
         })
     })
 
     // Клик снаружи дропдауна Закрыть дропдаун.
     document.addEventListener("click", (e) => {
         if (e.target !== selectBtn){
-            list.classList.remove("custom-select__list--visible");
-            selectBtn.classList.remove("custom-select__button--active")
+            closeDropdown();
         }
     })
 
     // Нажатие на кнопки. Закрыть дропдаун.
     document.addEventListener("keydown", (e) => {
         if (e.key === "Tab" || e.key === "Escape"){
-            list.classList.remove("custom-select__list--visible");
-            selectBtn.classList.remove("custom-select__button--active")
+            closeDropdown();
         }
     })
 })
@@ -100,25 +119,22 @@ validator
     },
 ])
 
-
-
-
 //Модальное окно
 const modalBtn = document.querySelector(".hero__modal-btn");
 const modalCloseBtn = document.querySelector(".form-search__close-modal");
 const formSearch = document.querySelector(".form-search");
 
-modalBtn.addEventListener("click", () => {
-    formSearch.classList.toggle("form-search--open");
-    body.classList.toggle('lock');
+modalBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    formSearch.classList.add("form-search--open");
+    body.classList.add('lock');
 })
 
-modalCloseBtn.addEventListener("click", () => {
-    formSearch.classList.toggle("form-search--open");
-    body.classList.toggle('lock');
+modalCloseBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    formSearch.classList.remove("form-search--open");
+    body.classList.remove('lock');
 })
-
-
 
 // Инициализация Swiper
 const swiper = new Swiper('.popular__swiper', {
@@ -171,20 +187,6 @@ const swiper3 = new Swiper('.gallery__swiper', {
     }
 });
 
-
-// Изменение текста по брейкпоинту
-function applyStyles() {
-    if (window.innerWidth <= 550) {
-        document.querySelector(".newsletter__content-subtitle").innerHTML = "Делимся впечатлениями";
-    }
-    else{
-        document.querySelector(".newsletter__content-subtitle").innerHTML = "Получайте полезные рассылки о путешествиях";
-    }
-}
-
-window.addEventListener('resize', applyStyles);
-applyStyles();
-
 // Инициализация галлереи
 new VenoBox({
     selector: '.gallery__link',
@@ -194,3 +196,18 @@ new VenoBox({
     share: true,
     spinner: 'rotating-plane'
 });
+
+
+// Изменение текста по брейкпоинту
+function updateNewsletterSubtitle() {
+    const subtitleElement = document.querySelector(".newsletter__content-subtitle");
+    if (window.innerWidth <= 550) {
+        subtitleElement.innerHTML = "Делимся впечатлениями";
+    }
+    else{
+        subtitleElement.innerHTML = "Получайте полезные рассылки о путешествиях";
+    }
+}
+
+window.addEventListener('resize', updateNewsletterSubtitle);
+updateNewsletterSubtitle();
